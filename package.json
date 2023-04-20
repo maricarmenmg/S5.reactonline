@@ -1,0 +1,22 @@
+{
+  "name": "s5.reactonline",
+  "version": "1.0.0",
+  "description": "![screenshot](./assets/img/sprint5.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maricarmenmg/S5.reactonline.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maricarmenmg/S5.reactonline/issues"
+  },
+  "homepage": "https://github.com/maricarmenmg/S5.reactonline#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
