@@ -7,13 +7,13 @@ const jokeElement = document.getElementById('joke');
 const nextButton =  document.getElementById('nextJoke');
 
 
-
 nextButton.addEventListener('click', () => {
   fetch(API_JOKE, { headers })
     .then(response => response.json())
     .then(data => jokeElement.textContent = data.joke);
 });
 
+// Ejercicio 3
 
 const reportAcudits = [
   {
