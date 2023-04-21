@@ -2,7 +2,7 @@
 # Sprint 5 IT Academy | Acudits
 ## TypeScript & API
 
-![screenshot](./assets/img/sprint5.png)
+![screenshot](./src/assets/img/sprint5.png)
 
 
 ## [Live Site]()

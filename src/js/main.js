@@ -13,18 +13,48 @@ nextButton.addEventListener('click', () => {
     .then(data => jokeElement.textContent = data.joke);
 });
 
+
+
 // Ejercicio 3
 
-const reportAcudits = [
-  {
-    broma: "...",
-    puntuación: 1,
-    fecha: 45
-  
-  }
-]
+const reportAcudits = [];
 
-const date = new Date();
-const dateISOString = date.toISOString();
+function valorarChiste(joke) {
+  // Creamos un objeto para almacenar la información del chiste valorado
+  const valoracion = {
+    joke: joke,
+    resultado: 1,
+    date: new Date().toISOString() // Guardamos la fecha en formato ISO
+  };
 
-console.log(dateISOString); // Devuelve una cadena de texto con la fecha en formato ISO
+  // Mostramos los botones de valoración
+  const botones = document.getElementById("rate-one");
+  botones.style.display = "block";
+
+  // Asignamos los eventos para las votaciones
+  const votos = document.querySelectorAll(".voto");
+  votos.forEach(voto => {
+    voto.addEventListener("click", function() {
+      valoracion.resultado = parseInt(this.dataset.valoracion);
+      console.log("Se ha valorado el chiste:", valoracion);
+      cargarSiguienteChiste();
+    });
+  });
+
+  // Añadimos la valoración al array
+  reportAcudits.push(valoracion);
+}
+
+
+function loadNextJoke() {
+}
+
+// Load the next joke for the user to rate
+
+
+
+
+
+
+
+
