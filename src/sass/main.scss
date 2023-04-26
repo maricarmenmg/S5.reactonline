@@ -1,16 +1,15 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
 
 
 body {
   overflow-x: hidden;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-image: url(../assets/img/ball-park-brand-MflMvzNfdQ8-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
 }
-
 .overlay{
   background: #4646465f;
   background-size: cover;
@@ -29,5 +28,39 @@ body {
 }
 
 .jokerate{
- visibility: visible;
+ padding: 15px;
+}
+ 
+.jokerate-btn{
+  display: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 35px;
+}
+.jokerate-btn:hover {
+  color: #282828;
+  background-color: #ffdd00;
+  border: solid 3px #a28d04;
+}
+
+.btn{
+  border-radius: 35px;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 0px 10px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
 }
