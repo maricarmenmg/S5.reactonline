@@ -11,48 +11,44 @@
 </head>
 
 <body>
-<!-- Responsive navbar 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container px-lg-5">
-      <a class="navbar-brand" href="#!">Weather</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Weather</a></li>
-              <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-          </ul>
-      </div>
+
+
+<!-- weather navbar -->
+
+<nav class="navbar navbar-expand-lg weather">
+<div class="container-fluid">
+  <ul class="navbar-nav rounded-pill">
+    <li class="nav-item">
+      <p id="weather">
+        <span id="city-name"></span>
+        <span id="weather-icon"></span>
+      </p>
+    </li>
+    <li class="nav-item">
+     <p id="degrees"></p>
+    </li>
+      </ul>
+    </div>
+</nav>
+
+<!-- Header Joke Container -->
+
+  <div class="container px-lg-5 side-blob-1">
   </div>
-</nav>-->
-
-<!-- Header Joke Container 
-<header class="py-5">
-  <div class="container px-lg-5 joke-container">
-      <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h3 class="fw-bold  text-xl joke-title"><i class="fa-solid fa-face-grin-hearts fa-2xl"></i></h3>
-              <h1 class="display-5 fw-bold joke-title"">Preparat per riure?</h1>
-
-          </div>
-      </div>
-
-  </div>
-</header>-->
 
 <!-- Page Content-->
-<main class="py-5 overlay">
-  <div class="container px-lg-5 joke-container">
-    <div class="p-4 p-lg-5 bg-light rounded-3 text-center shadow">
-        <div class="m-4 m-lg-5">
+<main class="py-5 ">
+  <div class="container px-lg-5 joke-container blob">
+    <div class="p-4 p-lg-5 text-center">
+        <div class="m-4 m-lg-5 ">
           <h3 class="p-4">
             <i class="fa-solid fa-face-grin-squint-tears fa-2xl" style="color: #292929;"></i>
           </h3>
-            <h1 class="h1 fw-bold  ">Ready to laugh?</h1>
+            <h1 class="h1 fw-bold  text-center">Ready to laugh?</h1>
         </div>
 
         <div class="m-10 m-lg-5">
-          <p id="joke" class="fs-5"></p>
+          <p id="joke" class="fs-5 text-center p-5"></p>
 
         </div>
   
@@ -63,17 +59,15 @@
   <div class="m-4 m-lg-3 ">
 
     <button id="rateOne" class="jokerate-btn btn btn-circle btn-xl mx-1">
-        <i class="fa-solid fa-face-flushed" style="font-size: 35px"></i>
+        <i class="fa-solid fa-face-flushed" style="font-size: 40px"></i>
    </button>
 
    <button id="rateTwo" class="jokerate-btn btn btn-circle btn-xl mx-1">
-    <i class="fa-solid fa-face-meh " style="font-size: 35px"></i>
+    <i class="fa-solid fa-face-meh " style="font-size: 40px"></i>
    </button>
  <button id="rateThree" class="jokerate-btn btn btn-circle btn-xl mx-1">
-   <i class="fa-solid fa-face-grin-squint-tears " style="font-size: 35px"></i>
+   <i class="fa-solid fa-face-grin-squint-tears " style="font-size: 40px"></i>
  </button>
-
-
 
 </div>
 </div>

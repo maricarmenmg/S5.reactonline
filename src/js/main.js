@@ -1,16 +1,16 @@
-// Materiales de apoyo  ⚡️  https://youtu.be/eLqMkQf4Qks  ⚡️  https://youtu.be/LJzDHKPLWYw?t=2715   ⚡️  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch 
-
+// Materiales de apoyo  ⚡️  https://youtu.be/eLqMkQf4Qks  ⚡️  https://youtu.be/LJzDHKPLWYw?t=2715   ⚡️  https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch  ⚡️  https://rapidapi.com/hub
 
 const API_JOKE_ONE = 'https://icanhazdadjoke.com/';
 const API_JOKE_TWO = 'https://api.chucknorris.io/jokes/random';
+const API_WEATHER =  'https://api.openweathermap.org/data/';
 const headers = { 'Accept': 'application/json' };
-
 const jokeElement = document.getElementById('joke');
 const rateOne = document.getElementById('rateOne');
 const rateTwo = document.getElementById('rateTwo');
 const rateThree = document.getElementById('rateThree');
 const nextButton = document.getElementById('nextJoke');
 const rateButtons = document.getElementsByClassName('jokerate-btn');
+const weatherElement = document.getElementById('weather');
 
 let currentAPI = 0;
 
@@ -19,24 +19,31 @@ nextButton.addEventListener('click', nextJoke);
 // Create an empty array to store joke objects
 const reportJokes = [];
 
-// Function to fetch a joke and handle voting
+
+// 🤣 FETCH JOKE RATE
+
+
+// Función nextJoke() obtener y mostrar un nuevo chiste 
+
 function nextJoke() {
   // Display the rating buttons
   Array.from(rateButtons).forEach(button => {
     button.style.display = 'inline-block';
   });
 
-  // Get the current joke API URL and increment the currentAPI variable
+
+// Obtener la URL actual de la API de chistes e incrementar la variable currentAPI
+
   const apiUrl = currentAPI === 0 ? API_JOKE_ONE : API_JOKE_TWO;
   currentAPI = (currentAPI + 1) % 2;
 
-  // Call the API to get a joke
+
+  // LLamada a la API para obtener chiste
+
   fetch(apiUrl, { headers })
-    // Parse the data response as JSON
     .then(response => response.json())
-    // Handle the data received
     .then(data => {
-      // Create a new joke object with a score of 0 and the current date in an ISO string if current API === 1 
+      // Crear un nuevo objeto joke con una puntuación de 0 y la fecha actual en una cadena ISO if API actual === 1
       const jokes = currentAPI === 1 ? {
         joke: data.joke,
         score: 0,
@@ -47,15 +54,15 @@ function nextJoke() {
         date: new Date().toISOString()
       };
 
-      // Display the joke text on screen 
+
+      // Mostrar el texto del chiste en pantalla
       jokeElement.innerText = jokes.joke;
 
-      // Change button text to Next Joke
+
+ // Cambiar el texto del botón a Next Joke
       nextButton.textContent = " Next Joke ";
    
-    
-
-      // Add event listeners for each rating button 
+      // Añadir event listeners para cada botón de valoración
       rateOne.addEventListener('click', () => {
         jokes.score = 1;
         updateReportJokes(jokes);
@@ -69,29 +76,62 @@ function nextJoke() {
         updateReportJokes(jokes);
       });
 
-      console.log("🤡 Current Joke Object: ", jokes);
-      // Log the current joke object to the console
+      // Mostrar por consola el chiste
+      console.log(" 🤡 Current Joke Object: ", jokes);
 
     })
+
     // Handle any errors
     .catch(error => console.error(error));
 }
 
-// Function to update reportJokes array with the joke object
+
+// Función para actualizar el array reportJokes con el objeto joke
 
 function updateReportJokes(jokes) {
 
-  // Check if the joke is already in the reportJokes array using findIndex
+ // Comprobamos si el chiste está en el array reportJokes usando findIndex
   const index = reportJokes.findIndex(obj => obj.joke == jokes.joke);
 
-  // If it is, update the existing object with the new score
+  // Si lo es, actualiza el objeto existente con la nueva puntuación
   if (index !== -1) {
     reportJokes[index] = jokes;
   } 
-  // Otherwise, add the new joke object to the reportJokes array
+  // En caso contrario, añade el nuevo objeto al array reportJokes
   else {
     reportJokes.push(jokes);
   }
   
-  console.log("ℹ️ Report Jokes: ", reportJokes);
+  // Mostrar por consola puntuaciones
+  console.log(" ℹ️ Report Jokes: ", reportJokes);
+
 }
+
+
+
+// ⛅️  FETCH WEATHER DATA 
+
+// Fetch the weather from the OpenWeatherMap API
+
+fetch ('https://api.openweathermap.org/data/2.5/weather?q=Andorra+La+Vella&appid=5f99286a37c156fb55555994b13d8cb5', {
+// Set the headers to indicate that the response should be in JSON format  
+headers: {
+    'Accept': 'application/json'
+  }
+})
+
+.then(response => response.json())
+.then( data => { 
+  const cityName = data.name; 
+  const iconCode = data.weather[0].icon;
+  const weatherIcon = document.getElementById("weather-icon");
+  const kelvinTemp = data.main.temp;
+  const temperatureElement = document.getElementById("degrees");
+  const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+  weatherIcon.innerHTML = `<img src="${iconUrl}" alt="Weather icon">`;
+  const celsiusTemp = Math.floor(kelvinTemp - 273.15);
+  temperatureElement.innerText = `${celsiusTemp}°C`;
+  const cityNameElement = document.getElementById("city-name");
+  cityNameElement.innerText = cityName;
+
+})

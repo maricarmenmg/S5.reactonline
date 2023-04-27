@@ -5,37 +5,47 @@
 body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-  background-image: url(../assets/img/ball-park-brand-MflMvzNfdQ8-unsplash.jpg);
+  /*background-image: url(../assets/img/ball-park-brand-MflMvzNfdQ8-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: center;
+  justify-content: center;*/
+  background-color:#d6f2a6;
 }
-.overlay{
+
+/*.overlay{
   background: #4646465f;
   background-size: cover;
   position: absolute;
   height: 100%;
   width: 100%;
-}
+}*/
+
 
 .joke-container{
-  width: 50rem;
-  min-height: 15rem;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  left:50%;
+}
+
+ .blob {
+  background-image:url('../assets/svg/blob-haikei-01.svg');
+  background-repeat:no-repeat;
+  background-size: contain;
+  padding: 70px;
+  position: absolute;
+  height:1000px;
+  width: 1200px;
+  left: 20%
 }
 
 .jokerate{
- padding: 15px;
+ padding:5px;
 }
  
 .jokerate-btn{
   display: none;
   background-color: transparent;
   border: none;
-  border-radius: 35px;
 }
 .jokerate-btn:hover {
   color: #282828;
@@ -43,10 +53,19 @@ body {
   border: solid 3px #a28d04;
 }
 
+.btn-primary{
+  color:#282828;
+  background-color: #cff096;
+  border: 1px solid #c0df8a;
+}
+.btn:hover {
+  color:#282828;
+  background-color: #b2d07e;
+  border: 1px solid #c0df8a;
+}
 .btn{
   border-radius: 35px;
 }
-
 .btn-circle.btn-xl {
   width: 70px;
   height: 70px;
@@ -63,4 +82,36 @@ body {
   text-align: center;
   font-size: 12px;
   line-height: 1.42857;
+}
+
+.weather {
+  background-color:#d6f2a6;
+  margin: 20px 20px;
+  padding: 25px;
+}
+#city-name{
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 5px;
+}
+#weather-icon{
+  width: 50px;
+
+}
+#degrees{
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 11px;
+  border-left: #b9d28e;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+
+.navbar-nav{
+  background-color:#c6e197;
+  width: auto;
+  height: 50px
+}
+.nav-item{
+  margin-left:20px;
 }
