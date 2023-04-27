@@ -28,7 +28,7 @@ body {
 }
 
  .blob {
-  background-image:url('../assets/svg/blob-haikei-01.svg');
+  background-image:url('../assets/svg/blob-haikei-02.svg');
   background-repeat:no-repeat;
   background-size: contain;
   padding: 70px;
@@ -36,6 +36,29 @@ body {
   height:1000px;
   width: 1200px;
   left: 20%
+}
+
+.blob-down {
+  background-image:url('../assets/svg//blob-haikei-01.svg');
+  background-repeat:no-repeat;
+  background-size: contain;
+  padding: 70px;
+  position: absolute;
+  height:300px;
+  width: 400px;
+  left: 1.6%;
+  top:70%;
+}
+.blob-up {
+  background-image:url('../assets/svg//blob-haikei-03.svg');
+  background-repeat:no-repeat;
+  background-size: contain;
+  padding: 70px;
+  position: absolute;
+  height:300px;
+  width: 400px;
+  right: -45%;
+  top:7%;
 }
 
 .jokerate{
@@ -59,6 +82,11 @@ body {
   border: 1px solid #c0df8a;
 }
 .btn:hover {
+  color:#282828;
+  background-color: #b2d07e;
+  border: 1px solid #c0df8a;
+}
+.btn:first-child:active, .btn.active, .btn.show {
   color:#282828;
   background-color: #b2d07e;
   border: 1px solid #c0df8a;
